@@ -4,7 +4,7 @@ import os
 
 # Windows
 root = tk.Tk()
-
+root.title("Auto Start Apps")
 apps = []
 
 # Add Apps Method
