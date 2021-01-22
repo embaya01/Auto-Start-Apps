@@ -6,7 +6,6 @@ import os
 root = tk.Tk()
 root.title("Auto Start Apps")
 apps = []
-
 # Load saved file
 
 if os.path.isfile('saved.txt'):
@@ -18,7 +17,8 @@ if os.path.isfile('saved.txt'):
 
 def printFiles():
     for app in apps:
-        label = tk.Label(frame, text=app, bg="blue", fg="white",)
+        label = tk.Label(frame, text=app, bg="blue", font=("Calibri", 12, "bold"),
+                         fg="white", padx=200, pady=10)
         label.pack()
 
 
@@ -42,7 +42,7 @@ def runApps():
 
 
 # Main Container
-canvas = tk.Canvas(root, height=700, width=700, bg="#eee")
+canvas = tk.Canvas(root, height=700, width=700, bg="red")
 canvas.pack()
 
 # container
@@ -50,12 +50,12 @@ frame = tk.Frame(root, bg="white", borderwidth=2, relief='sunken')
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.05)
 
 # add app button
-addApp = tk.Button(root, text="Add App", padx=10,
-                   pady=5, fg="white", bg="green", command=addApp)
-addApp.pack()
-runApps = tk.Button(root, text="Run Apps", padx=10,
-                    pady=5, fg="white", bg="green", command=runApps)
-runApps.pack()
+addApp = tk.Button(root, text="Add App", padx=150,
+                   pady=30, fg="white", bg="green", command=addApp)
+addApp.pack(side='left')
+runApps = tk.Button(root, text="Run Apps", padx=150,
+                    pady=30, fg="white", bg="green", command=runApps)
+runApps.pack(side='right')
 
 printFiles()
 # Run
